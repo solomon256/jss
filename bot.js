@@ -11,7 +11,10 @@ if(process.env.NODE_ENV === 'production') {
   bot.setWebHook(config.TelegramProductionURL + bot.token);
 }
 else {
-  bot = new Bot(config.TelegramToken, { polling: true });
+  
+  bot = new Bot(config.TelegramToken);
+  bot.setWebHook(config.TelegramProductionURL + bot.token);
+//  bot = new Bot(config.TelegramToken, { polling: true });
 }
 
 //var Bot = require('node-telegram-bot-api'),
